@@ -31,12 +31,14 @@ jobs:
             --iso-name "${{ env.ISO_NAME }}" \
             image "${{ env.IMAGE_REPO }}:${{ env.IMAGE_TAG }}"
 
-      - name: Generate checksum
-        run: sha256sum "${{ env.ISO_NAME }}" > "${{ env.ISO_NAME }}.sha256"
+    #   - name: Generate checksum
+    #     run: sha256sum "${{ env.ISO_NAME }}" > "${{ env.ISO_NAME }}.sha256"
 
       - name: Upload iso
         uses: actions/upload-artifact@v7
         with:
           name: ${{env.ISO_NAME}}
-          path : ${{env.ISO_NAME}}
+          path : |
+            build/${{ env.ISO_NAME }}
+            build/${{ env.ISO_NAME }}-CHECKSUM
           retention-days: 5
