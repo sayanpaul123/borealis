@@ -42,6 +42,5 @@ jobs:
         with:
           name: ${{env.ISO_NAME}}
           path : |
-            ${{ github.workspace }}/build/${{ env.ISO_NAME }}
-            ${{ github.workspace }}/build/${{ env.ISO_NAME }}-CHECKSUM
+            ${{ github.workspace }}/build/
           retention-days: 5
