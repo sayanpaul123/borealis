@@ -20,27 +20,30 @@ jobs:
       contents: write   # needed to create/update the release
       packages: read    # needed to pull from GHCR
 
-    container:
-      image: ghcr.io/blue-build/cli:latest
-      options: --privileged
-
     steps:
-      - name: Generate ISO
-        run: |
-          bluebuild generate-iso \
-            --iso-name "${{ env.ISO_NAME }}" \
+        - name: Generate ISO
+          run: |
+            podman run --rm --privileged \
+            -v ${{ github.workspace }}:/work -w /work \
+            ghcr.io/blue-build/cli:latest \
+            generate-iso --output-dir /work --iso-name "${{ env.ISO_NAME }}" \
             image "${{ env.IMAGE_REPO }}:${{ env.IMAGE_TAG }}"
+        #   - name: Generate ISO
+        #     run: |
+        #       bluebuild generate-iso \
+        #         --iso-name "${{ env.ISO_NAME }}" \
+        #         image "${{ env.IMAGE_REPO }}:${{ env.IMAGE_TAG }}"
 
-    #   - name: Generate checksum
-    #     run: sha256sum "${{ env.ISO_NAME }}" > "${{ env.ISO_NAME }}.sha256"
-     
-      - name: Show build output
-        run: find / -name "*.iso" 2>/dev/null
+        # #   - name: Generate checksum
+        # #     run: sha256sum "${{ env.ISO_NAME }}" > "${{ env.ISO_NAME }}.sha256"
+        
+        - name: Show build output
+          run: find ${{ github.workspace }} -name "*.iso" 2>/dev/null
 
-      - name: Upload iso
-        uses: actions/upload-artifact@v7
-        with:
-          name: ${{env.ISO_NAME}}
-          path : |
-            ${{ github.workspace }}/build/
-          retention-days: 5
+        - name: Upload iso
+          uses: actions/upload-artifact@v7
+          with:
+            name: ${{env.ISO_NAME}}
+            path : |
+                ${{ github.workspace }}/build/
+                retention-days: 5
