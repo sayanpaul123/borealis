@@ -22,24 +22,24 @@ modules:
     repos:
       files:
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-        - vscode.repo
+        # - vscode.repo
         - 1password.repo
-        - https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
-        - https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo
+        # - https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+        # - https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo
       keys:
-        - https://packages.microsoft.com/keys/microsoft.asc
-        - https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+        # - https://packages.microsoft.com/keys/microsoft.asc
+        # - https://download.sublimetext.com/sublimehq-rpm-pub.gpg
         - https://downloads.1password.com/linux/keys/1password.asc
     install:
       packages:
-        - code
+        # - code
         - chromium
-        - sublime-text
+        # - sublime-text
         - tailscale
         - xeyes
-        - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
+        # - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
         - 1password
-        - zed
+        # - zed
 
   # - type: bling
   #   install:
