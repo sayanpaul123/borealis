@@ -33,12 +33,15 @@ jobs:
 
     #   - name: Generate checksum
     #     run: sha256sum "${{ env.ISO_NAME }}" > "${{ env.ISO_NAME }}.sha256"
+     
+      - name: Show build output
+        run: find / -name "*.iso" 2>/dev/null
 
       - name: Upload iso
         uses: actions/upload-artifact@v7
         with:
           name: ${{env.ISO_NAME}}
           path : |
-            build/${{ env.ISO_NAME }}
-            build/${{ env.ISO_NAME }}-CHECKSUM
+            ${{ github.workspace }}/build/${{ env.ISO_NAME }}
+            ${{ github.workspace }}/build/${{ env.ISO_NAME }}-CHECKSUM
           retention-days: 5
