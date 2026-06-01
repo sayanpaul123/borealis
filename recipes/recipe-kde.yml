@@ -40,6 +40,9 @@ modules:
         # - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
         - 1password
         # - zed
+    remove:
+      packages:
+        - firefox
 
   # - type: bling
   #   install:
