@@ -1,0 +1,82 @@
+---
+yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+
+# image will be published to ghcr.io/<user>/<name>
+name: borealis
+# description will be included in the image's metadata
+description: Aurora bluebuild with some extra packages
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/kinoite-main
+image-version: latest # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: kargs
+    kargs:
+      - amd_iommu=on
+      - iommu=pt
+
+  - type: akmods
+    # base: bazzite
+    nvidia-driver: nvidia-open
+    install:
+      - xone
+      # - kvmfr
+
+  - type: script
+    scripts:
+      - build_kvmfr.sh
+
+  - type: dnf
+    repos:
+      files:
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+        # - vscode.repo
+        - 1password.repo
+        # - https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+        # - https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo
+      keys:
+        # - https://packages.microsoft.com/keys/microsoft.asc
+        # - https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+        - https://downloads.1password.com/linux/keys/1password.asc
+    install:
+      packages:
+        # - code
+        - chromium
+        # - sublime-text
+        - tailscale
+        - xeyes
+        # - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
+        - 1password
+        # - zed
+        - libvirt
+        - libvirt-client
+        - virt-manager
+        - qemu-kvm
+        - virt-install
+        - swtpm  
+    remove:
+      packages:
+        - firefox
+
+  # - type: bling
+  #   install:
+  #     - 1password
+  - type: files
+    files:
+      - source: system
+        destination: /
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode
+
+  - type: systemd
+    system:
+      enabled:
+        - tailscaled
+        - libvirtd.service
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
