@@ -57,6 +57,6 @@ modules:
       enabled:
         - tailscaled
         - libvirtd.service
-        - asusd.service
+        # - asusd.service
 
   - type: signing
