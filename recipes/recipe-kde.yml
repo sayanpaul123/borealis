@@ -77,12 +77,5 @@ modules:
       enabled:
         - tailscaled
         - libvirtd.service
-  
-  - type: verify-packages
-    packages:
-      - asusctl
-      - xone
-    kmods:
-      - kvmfr
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
