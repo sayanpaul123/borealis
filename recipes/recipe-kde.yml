@@ -19,7 +19,7 @@ modules:
       - iommu=pt
 
   - type: akmods
-    base: bazzite
+    # base: bazzite
     nvidia-driver: nvidia-open
     install:
       - xone
