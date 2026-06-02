@@ -13,10 +13,16 @@ image-version: 43 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  - type: kargs
+    kargs:
+      - amd_iommu=on
+      - iommu=pt
+
   - type: akmods
     nvidia-driver: nvidia-open
     install:
       - xone
+      - kvmfr
 
   - type: dnf
     repos:
@@ -40,6 +46,12 @@ modules:
         # - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
         - 1password
         # - zed
+        - libvirt
+        - libvirt-client
+        - virt-manager
+        - qemu-kvm
+        - virt-install
+        - swtpm  
     remove:
       packages:
         - firefox
@@ -47,6 +59,10 @@ modules:
   # - type: bling
   #   install:
   #     - 1password
+  - type: files
+    files:
+      - source: system
+        destination: /
   - type: fonts
     fonts:
       nerd-fonts:
@@ -56,5 +72,6 @@ modules:
     system:
       enabled:
         - tailscaled
+        - libvirtd.service
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

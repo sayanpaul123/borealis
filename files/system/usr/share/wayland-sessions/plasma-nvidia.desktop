@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Plasma (NVIDIA)
+Comment=KDE Plasma on NVIDIA — iGPU free for VM passthrough
+Exec=env KWIN_DRM_DEVICES=/dev/dri/by-path/pci-0000:01:00.0-card /usr/bin/startplasma-wayland
+DesktopNames=KDE
+Type=Application
