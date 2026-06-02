@@ -19,14 +19,15 @@ modules:
       - iommu=pt
 
   - type: akmods
+    base: bazzite
     nvidia-driver: nvidia-open
     install:
       - xone
-
-  - type: akmods
-    base: bazzite
-    install:
       - kvmfr
+
+  # - type: script
+  #   scripts:
+  #     - build-kvmfr.sh
 
   - type: dnf
     repos:
