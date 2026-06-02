@@ -22,6 +22,10 @@ modules:
     nvidia-driver: nvidia-open
     install:
       - xone
+
+  - type: akmods
+    base: extra
+    install:
       - kvmfr
 
   - type: dnf
