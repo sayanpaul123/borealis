@@ -23,11 +23,11 @@ modules:
     nvidia-driver: nvidia-open
     install:
       - xone
-      - kvmfr
+      # - kvmfr
 
-  # - type: script
-  #   scripts:
-  #     - build-kvmfr.sh
+  - type: script
+    scripts:
+      - build_kvmfr.sh
 
   - type: dnf
     repos:
