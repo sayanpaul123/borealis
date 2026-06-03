@@ -21,15 +21,15 @@ modules:
         - https://downloads.1password.com/linux/keys/1password.asc
     remove:
       packages:
-        - bazaar
-        - krunner-bazaar
+        # - bazaar
+        # - krunner-bazaar
         - gnome-disk-utility
     install:
       packages:
         - 1password
         - chromium
-        - plasma-discover
-        - plasma-discover-flatpak
+        # - plasma-discover
+        # - plasma-discover-flatpak
         - kde-partitionmanager
         - libvirt
         - libvirt-client
