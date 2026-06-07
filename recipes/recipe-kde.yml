@@ -42,6 +42,11 @@ modules:
     fonts:
       nerd-fonts:
         - FiraCode
+  
+  - type: containerfile
+    snippets:
+      - |
+        RUN ln -s /var/nix /nix
 
   - type: containerfile
     snippets:
