@@ -45,11 +45,6 @@ modules:
   
   - type: containerfile
     snippets:
-      - |
-        RUN ln -s /var/nix /nix
-
-  - type: containerfile
-    snippets:
       - "RUN ln -sf /dev/null /etc/systemd/system/bazzite-flatpak-manager.service"
 
   - type: files
