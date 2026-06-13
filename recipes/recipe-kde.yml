@@ -15,6 +15,8 @@ modules:
 
   - type: dnf
     repos:
+      copr:
+        - matinlotfali/KDE-Rounded-Corners
       files:
         - 1password.repo
       keys:
@@ -26,6 +28,7 @@ modules:
         - gnome-disk-utility
     install:
       packages:
+        - kwin-effect-roundcorners
         - 1password
         - chromium
         # - plasma-discover
