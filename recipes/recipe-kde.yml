@@ -56,10 +56,10 @@ modules:
 
   - type: files
     files:
-      - source: tmpfiles.d
-        destination: /etc/tmpfiles.d
-      - source: systemd/system
-        destination: /etc/systemd/system
+      # - source: tmpfiles.d
+      #   destination: /etc/tmpfiles.d
+      # - source: systemd/system
+      #   destination: /etc/systemd/system
       - source: system
         destination: /
 
@@ -68,7 +68,7 @@ modules:
       enabled:
         - tailscaled
         - libvirtd.service
-        - nix.mount
+        # - nix.mount
         # - asusd.service
 
   - type: signing
