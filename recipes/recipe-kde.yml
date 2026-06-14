@@ -52,8 +52,7 @@ modules:
 
   - type: script
     scripts:
-      - |
-        mkdir -p /nix
+      - create-nix-dir.sh
 
   - type: files
     files:
