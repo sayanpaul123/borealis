@@ -19,8 +19,10 @@ modules:
         - matinlotfali/KDE-Rounded-Corners
       files:
         - 1password.repo
+        - https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
       keys:
         - https://downloads.1password.com/linux/keys/1password.asc
+        - https://download.sublimetext.com/sublimehq-rpm-pub.gpg
     remove:
       packages:
         # - bazaar
@@ -40,6 +42,8 @@ modules:
         - qemu-kvm
         - virt-install
         - swtpm
+        - sublime-text
+        - sublime-merge
 
   - type: fonts
     fonts:
