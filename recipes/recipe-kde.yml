@@ -15,8 +15,8 @@ modules:
 
   - type: dnf
     repos:
-      copr:
-        - matinlotfali/KDE-Rounded-Corners
+      # copr:
+      #   - matinlotfali/KDE-Rounded-Corners
       files:
         - 1password.repo
         - https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
@@ -30,7 +30,9 @@ modules:
         - gnome-disk-utility
     install:
       packages:
-        - kwin-effect-roundcorners
+        - kjournald
+        - ksystemlog
+        # - kwin-effect-roundcorners
         - 1password
         - chromium
         # - plasma-discover
@@ -57,6 +59,7 @@ modules:
   - type: script
     scripts:
       - create-nix-dir.sh
+      - build-kwin-rounded-corners.sh
 
   - type: files
     files:
