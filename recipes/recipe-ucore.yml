@@ -1,0 +1,14 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: aurora
+description: Ucore with some extra packages
+base-image: ghcr.io/ublue-os/ucore
+image-version: latest
+
+modules:
+  - type: dnf
+    install:
+      packages:
+        - btop
+
+  - type: signing
