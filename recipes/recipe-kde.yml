@@ -30,6 +30,7 @@ modules:
         - gnome-disk-utility
     install:
       packages:
+        - kitty
         - kjournald
         - ksystemlog
         # - kwin-effect-roundcorners
