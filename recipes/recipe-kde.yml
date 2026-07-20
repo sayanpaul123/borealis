@@ -30,6 +30,7 @@ modules:
         - gnome-disk-utility
     install:
       packages:
+        - plasma-bigscreen
         - kitty
         - kjournald
         - ksystemlog
@@ -60,7 +61,7 @@ modules:
   - type: script
     scripts:
       - create-nix-dir.sh
-      - build-kwin-rounded-corners.sh
+      # - build-kwin-rounded-corners.sh
 
   - type: files
     files:
