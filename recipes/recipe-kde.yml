@@ -31,6 +31,8 @@ modules:
     install:
       packages:
         - plasma-bigscreen
+        - krusader
+        - zsh
         - kitty
         - kjournald
         - ksystemlog
