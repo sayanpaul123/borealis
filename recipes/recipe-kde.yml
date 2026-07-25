@@ -30,6 +30,7 @@ modules:
         - gnome-disk-utility
     install:
       packages:
+        - util-linux-user
         - plasma-bigscreen
         - krusader
         - zsh
