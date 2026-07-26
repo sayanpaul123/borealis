@@ -31,6 +31,7 @@ modules:
     install:
       packages:
         - util-linux-user
+        - arp-scan
         - plasma-bigscreen
         - krusader
         - zsh
