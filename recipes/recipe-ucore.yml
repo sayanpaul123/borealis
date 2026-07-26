@@ -11,4 +11,9 @@ modules:
       packages:
         - btop
 
+  - type: systemd
+    system:
+      enabled:
+        - tailscaled
+
   - type: signing
