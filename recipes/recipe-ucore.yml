@@ -15,5 +15,6 @@ modules:
     system:
       enabled:
         - tailscaled
+        - cockpit
 
   - type: signing
