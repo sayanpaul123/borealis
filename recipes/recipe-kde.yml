@@ -34,7 +34,7 @@ modules:
         - arp-scan
         - plasma-bigscreen
         - krusader
-        - zsh
+        # - zsh
         - kitty
         - kjournald
         - ksystemlog
