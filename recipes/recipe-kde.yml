@@ -41,7 +41,7 @@ modules:
         - ksystemlog
         # - kwin-effect-roundcorners
         - 1password
-        - chromium
+        # - chromium
         - helium-bin
         # - plasma-discover
         # - plasma-discover-flatpak
