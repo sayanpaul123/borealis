@@ -45,6 +45,7 @@ modules:
         - helium-bin
         # - plasma-discover
         # - plasma-discover-flatpak
+        - karp
         - kde-partitionmanager
         - libvirt
         - libvirt-client
