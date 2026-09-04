@@ -16,7 +16,7 @@ modules:
   - type: dnf
     repos:
       copr:
-        - imput/helium
+        # - imput/helium
       #   - matinlotfali/KDE-Rounded-Corners
       files:
         - 1password.repo
@@ -42,8 +42,8 @@ modules:
         # - kwin-effect-roundcorners
         - 1password
         # - chromium
-        - helium-bin
-        # - plasma-discover
+        # - helium-bin
+        # - plasma-discover-flatpakver
         # - plasma-discover-flatpak
         - karp
         - kde-partitionmanager
