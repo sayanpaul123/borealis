@@ -15,7 +15,7 @@ modules:
 
   - type: dnf
     repos:
-      copr:
+      # copr:
         # - imput/helium
       #   - matinlotfali/KDE-Rounded-Corners
       files:
